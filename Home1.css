@@ -1,0 +1,213 @@
+/* Se quita el margen y s pone color a toda la pagina*/
+body{
+    margin: 0;
+    font-family: 'Mulish', sans-serif;
+    background-color: #ab88ff;
+}
+/*Aqui estariamos poniendo la barra de arriba, tambien el display flex, junto con la justificación
+manda el perfil hasta la derecha de la pagina*/
+.header{
+    background-color: #ab88ff;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+        /*cambia tipo de letra, "etiqueta" se trae desde google fonts*/
+        justify-content: space-between;
+}
+/*Este seria el tamaño de la imagen del logo*/
+.header__img{
+    width: 300px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+/*Solo le pongo margen al menu a la derecha*/
+.header__menu{
+   margin-right: 50px;
+   cursor: pointer;
+}
+/*Se oculata el menu, se alinea y se estiliza*/
+.header__menu ul{
+   display: none;
+   list-style: none;
+   padding: 0px;
+   position: absolute;
+   width: 100px;
+   text-align: right;
+   margin: 0px 0px 0px -8px;
+}
+/*Para que se muestre, este esta ligado con display: none;*/
+.header__menu:hover ul, ul:hover{
+    display: block;   
+}
+/*para separar cuenta y cerrar sesion*/
+.header__menu li {
+   margin: 10px 0px;
+}
+/*color a los li, asi como el subrayado*/
+.header__menu li{
+   color: white;
+   text-decoration: none;
+}
+.header__menu li:hover{
+   text-decoration: underline;
+}
+/*se da margen al menu del perfil*/
+.header__menu--profile{
+   margin: 10px;
+   display: flex;
+   color: white;
+   align-items: center;
+}
+/*se le quita el margen a la etiqueta p*/
+.header__menu--profile p{
+  margin: 0px;
+}
+.main{
+   height: 300px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+.main__title{
+    color: white;
+    font-size: 25px;
+    
+}
+.categories__title{
+   color: white;
+   font-size: 16px;
+   position: absolute;
+   padding-left: 30px;
+   width: 100%;
+}
+/*se empieza a trabajar con todo aquello relaciona do a como se ve la bara de busqueda*/
+.input{
+background-color: rgba(255, 255, 255, 0.1);  
+/*esta parte le da controno blanco al buscador*/
+border: 2px solid white;
+border-radius: 30px; 
+/*esta parte es para el colo de la letra*/
+color: white;
+font-size: 16px;
+/*este es el ancho y medicion que ocupara la barra en la pagína*/
+height: 50px;
+padding: 0px 20px;
+width: 70%;
+outline: none;
+        /*cambia tipo de letra, "etiqueta"*/
+        justify-content: space-between;
+
+}
+::placeholder{
+   color: white;
+}
+.carousel{
+   width: 100%;
+   overflow: scroll;
+   padding: 30px;
+   position: relative;
+   /*para esconder la barra*/
+   overflow: hidden;
+}
+.carousel__container{
+   white-space: nowrap;
+   margin: 70px 0px;
+   padding-bottom: 10px;
+}
+.carousel-item{
+   background-color: white;
+   width: 200px;
+   height: 250px;
+   /*borde redondeado*/
+   border-radius: 20px;
+   overflow: hidden;
+   margin-right: 10px;
+   /*para alinear hacia la deracha las imagenes*/
+   display: inline-block;
+   cursor: pointer;
+   transition: 450ms all;
+   /*para que el cuadro no se salga*/
+   transform-origin: center left;
+   position: relative; 
+}
+.carousel-item:hover ~ .carousel-item {
+   transform: translate3d(100px, 0, 0);
+}
+.carousel__container:hover .carousel-item{
+    opacity: 0.3;
+}
+.carousel__container:hover .carousel-item:hover{
+   transform: scale(1.5);
+   opacity: 1;
+}
+.carousel-item__img{
+   width: 200px;
+   height: 250px;
+   object-fit: cover;
+}
+.carousel-item__details{
+   /*hace que se vea un poco opaco arriba y abajo de la imagen del carrusel*/
+   background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%,);
+   font-size: 10px;
+   opacity: 1;
+   transition: 450ms opacity;
+   padding: 10px;
+   position: absolute;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+}
+
+/*hay que corregir esto, ya que los iconos dentro del carrusel no los puedo mover*/ 
+.icono-dentro__deimg{
+   display: flex;
+   align-items: flex-end;
+   flex-wrap: wrap-reverse;
+}
+
+.carousel-item__details--title{
+   color: white;
+   display: flex;
+   justify-content: space-around;
+   align-items: flex-end;
+}
+
+.carousel-item__details--subtitle{
+   color: white;
+   display: flex;
+   justify-content: space-around;
+   align-items: flex-end; 
+}
+
+.piedepagina{
+   display: flex;
+   align-items: center; 
+   height: 100px;
+   width: 100%;
+}
+.piedepagina a{
+   color: white;
+   cursor: pointer;
+   font-size: 14px;
+   padding-left: 30px;
+   text-decoration: none;
+}
+.piedepagina a:hover{
+   text-decoration: underline;
+}
+    /*sirve para la aparencia en telefonos moviles*/
+    @media only screen and (max-width: 600px){
+      .login__container{
+          background-color: transparent;
+          border: none;
+          padding: 0px;
+          width: 100%;
+      }
+      .footer{
+          align-items: flex-start;
+          flex-direction: column;
+      }
+  }
